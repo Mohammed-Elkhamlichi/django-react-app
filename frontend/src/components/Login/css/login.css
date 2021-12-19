@@ -1,0 +1,131 @@
+body {
+    background: rgb(213, 226, 206);
+}
+
+/* Login form style */
+.form_container {
+    background: white;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px;
+    box-shadow: 1px 1px 1px white;
+    transition: width 1s;
+    border-radius: 20px;
+}
+.form_container:hover {
+    width: 600px;
+}
+.sign_in {
+    text-align: center;
+}
+/* username Container style */
+.username_container {
+    margin-top: 20px;
+    width: 100%;
+    object-fit: contain;
+    display: grid;
+}
+
+.username_container > .username_label {
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.username_container > .username_input {
+    font-weight: bold;
+    border-radius: 999px;
+    padding: 10px 15px;
+    border: none;
+    font-size: medium;
+    transition: padding 0.1s;
+    background: rgb(213, 226, 206);
+}
+.username_container > .username_input:focus {
+    outline-width: 0;
+}
+/* .username_container > .username_input:hover {
+    padding: 10px 15px;
+} */
+/* password Container style */
+.password_container {
+    margin-top: 20px;
+    width: 100%;
+    object-fit: contain;
+    display: grid;
+}
+
+.password_container > .password_label {
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.password_container > .password_input {
+    font-weight: bold;
+    border-radius: 999px;
+    padding: 10px 15px;
+    border: none;
+    font-size: medium;
+    transition: padding 0.1s;
+    background: rgb(213, 226, 206);
+}
+.password_container > .password_input:focus {
+    outline-width: 0;
+}
+/* .password_container > .password_input:hover {
+    padding: 10px 15px;
+} */
+
+/* button style */
+.button_container {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.button_container > .button_login {
+    background: rgb(217, 62, 248);
+    color: white;
+    font-weight: bold;
+    padding: 10px 30px;
+    transition: padding 0.2s;
+    border: none;
+    border-radius: 999px;
+}
+.button_container > .button_login:hover {
+    background: rgb(230, 59, 16);
+    padding: 10px 50px;
+}
+.button_container > .button_cancel {
+    font-weight: bold;
+    padding: 10px 30px;
+    transition: padding 0.2s;
+    border: none;
+    border-radius: 999px;
+    background: white;
+}
+.button_container > .button_cancel:hover {
+    background: rgb(17, 214, 214);
+    padding: 10px 50px;
+}
+/* alert styles */
+.alerts_container {
+    text-align: center;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+.alerts_container > .button_close {
+    float: right;
+    background: white;
+    color: black;
+    border-radius: 100px;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+}

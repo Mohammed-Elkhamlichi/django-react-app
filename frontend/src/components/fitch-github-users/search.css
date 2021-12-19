@@ -1,0 +1,32 @@
+.nav_search {
+    width: 80%;
+    margin: auto;
+}
+.form_search {
+    display: flex;
+    align-items: center;
+    border: 1px solid green;
+    width: 75vm;
+    margin: 10px auto;
+    justify-content: center;
+    background: white;
+    border-radius: 999px;
+    padding: 5px;
+}
+.search_input {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    flex: 1;
+}
+.search_input::placeholder{
+    color: rgb(47, 163, 73);
+}
+
+.search_input:focus {
+    outline-width: 0;
+    outline-color: black;
+}
