@@ -1,6 +1,7 @@
 .nav_search {
     width: 80%;
     margin: auto;
+    margin-top: 80px;
 }
 .form_search {
     display: flex;

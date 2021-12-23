@@ -4,6 +4,11 @@
     justify-content:space-evenly;
     flex-wrap: wrap;
     align-items: flex-center;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: -30px;
+    width: 95%;
+    padding: 10px;
 }
 .loading_container {
     /* text-align: center; */

@@ -1,0 +1,129 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+.container {
+  padding: 20px;
+  margin-top: 150px;
+}
+/* back Home Button Style */
+.back_home_btn {
+  background: green;
+  padding: 10px 20px;
+  margin: 10px;
+  margin-left: 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: padding 0.5s, background 0.5s;
+}
+.back_home_btn:hover {
+  padding: 10px 40px;
+  background: red;
+}
+
+/* todo Form Style */
+.todo_form {
+  border-radius: 5px;
+  margin: 10px auto;
+  
+  padding: 20px;
+  background: cyan;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.todo_form > .todo_input {
+  padding: 5px 10px;
+  flex: 2;
+  border: none;
+  font-size: medium;
+  transition: padding 1s;
+}
+.todo_form > .todo_input:focus {
+  outline-width: 0;
+}
+.todo_form > .todo_input:hover {
+  padding: 5px 20px;
+}
+.todo_form > .todo_btn {
+  padding: 15px 30px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background: green;
+  transition: padding 1s;
+}
+.todo_form > .todo_btn:hover {
+  padding: 15px 40px;
+  background: red;
+}
+
+/* todo List Style */
+.todo_list {
+  border-radius: 5px;
+  margin: 10px auto;
+  width: 100%;
+  background: cyan;
+  display: block;
+  justify-content: left;
+}
+.todo_list:hover {
+  border-left: 5px Solid rgb(233, 34, 27);
+  border-right: 5px Solid rgb(115, 170, 27);
+  border-top: 5px Solid rgb(170, 27, 139);
+  border-bottom: 5px Solid rgb(170, 27, 139);
+}
+.todo_item {
+  width: 100%;
+  margin: 10px;
+  padding: 20px 10px;
+}
+.flex_box {
+  display: flex;
+}
+.todo_title {
+  font-weight: bold;
+  color: rgb(155, 23, 84);
+  flex: 6;
+}
+.todo_info {
+  display: grid;
+}
+.todo_info > .date_create {
+  font-weight: bold;
+  color: rgb(110, 112, 197);
+}
+.todo_info > .date_update {
+  font-weight: bold;
+  color: rgb(110, 112, 197);
+}
+
+.edit_todo_btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: green;
+  margin: 5px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  transition: padding 0.5s;
+  flex: 1;
+}
+.edit_todo_btn:hover {
+  padding: 5px 20px;
+}
+.delete_todo_btn {
+  padding: 5px 10px;
+  background: red;
+  margin: 5px 10px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  transition: padding 0.5s;
+  border-radius: 5px;
+  flex: 1;
+}
+.delete_todo_btn:hover {
+  padding: 5px 20px;
+}
