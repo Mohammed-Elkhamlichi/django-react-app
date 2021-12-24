@@ -7,13 +7,15 @@ import ContactUs from "./ContactUs";
 const App = () => {
     return (
         <>
-            App.js Test React.js
-            <Router>
-                <Routes>
-                    <Route path='/about' element={<About />} />
-                    <Route path='/contact-us' element={<ContactUs />} />
-                </Routes>
-            </Router>
+            <div className='bg-info p-5'>
+                App.js Test React.js
+                <Router>
+                    <Routes>
+                        <Route path='/about' element={<About />} />
+                        <Route path='/contact-us' element={<ContactUs />} />
+                    </Routes>
+                </Router>
+            </div>
         </>
     );
 };

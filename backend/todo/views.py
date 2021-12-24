@@ -20,6 +20,7 @@ def todoList(request):
 
 @api_view(['GET'])
 def todoDetail(request, pk):
+    
     # todo/detail/2
     todo = Todo.objects.get(id=pk)
     serializer = TodoSerializer(todo, many=False)
