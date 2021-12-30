@@ -1,52 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import { data } from "./data";
 import Model from "./Model";
 
-const Index = () => {
-    const [people, setPeople] = useState(data);
-    const [newPerson, setNewPerson] = useState({
-        id: null,
-        first_name: "",
-        last_name: "",
-        email: "",
-    });
+import { initialState, reducer } from "./reducer";
 
+const Index = () => {
+    // use Reducer Hook
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    // redirection to an other page
+    const navigate = useNavigate();
+
+    // get The inputs Value Using useRef React Hook
+    const firstName = useRef(null);
+    const lastName = useRef(null);
+    const email = useRef(null);
+
+    // set the data get from the user inside a dictionary
+    let user = [firstName, lastName, email];
+
+    // arrow Function Handle the Form Submition
     const handleSubmit = (e) => {
-        let number = 10;
         e.preventDefault();
-        setNewPerson({ ...newPerson, id: number + 1 });
-        if (newPerson) {
-            setPeople([...people, newPerson]);
+
+        user[0] = firstName.current.value;
+        user[1] = lastName.current.value;
+        user[2] = email.current.value;
+
+        // if Input not Empty
+        if (user[0] && user[1] && user[2]) {
+            const newPerson = {
+                id: new Date().getTime().toString(),
+                first_name: user[0],
+                last_name: user[1],
+                email: user[2],
+            };
+
+            dispatch({
+                type: "ADD_USER",
+                getData: newPerson,
+            });
+
+            firstName.current.value = null;
+            lastName.current.value = null;
+            email.current.value = null;
+            navigate("/", { replace: true });
+        } else {
+            dispatch({ type: "NO_VALUE" });
         }
     };
 
     return (
         <>
-            <div className='container bg-light mt-5'>
-                <Model />
-                <h1 className='text-center'>React Use Reduce</h1>
+            {state.isModelOpen && <Model modelContent={state.modelContent} />}
+            <div className='container-fluid m-auto mt-5 mb-5 bg-light'>
+                <h1 className='text-center mt-5 p-5'>React Use Reduce</h1>
                 <form onSubmit={handleSubmit} className='border d-flex p-3'>
                     <input
                         type='text'
                         className='w-75 form-control'
                         placeholder='First Name'
-                        onChange={(e) =>
-                            setNewPerson({
-                                ...newPerson,
-                                first_name: e.target.value,
-                            })
-                        }
+                        ref={firstName}
                     />
                     <input
                         type='text'
                         className='w-75 form-control'
                         placeholder='Last Name'
-                        onChange={(e) =>
-                            setNewPerson({
-                                ...newPerson,
-                                last_name: e.target.value,
-                            })
-                        }
+                        ref={lastName}
                     />
                     <input
                         type='email'
@@ -54,12 +75,7 @@ const Index = () => {
                         id=''
                         className='w-75 form-control'
                         placeholder='Email'
-                        onChange={(e) =>
-                            setNewPerson({
-                                ...newPerson,
-                                email: e.target.value,
-                            })
-                        }
+                        ref={email}
                     />
                     <button className='btn btn-success w-25'>Create</button>
                 </form>
@@ -71,22 +87,16 @@ const Index = () => {
                                 <th scope='col'>First Name</th>
                                 <th scope='col'>Last Name</th>
                                 <th scope='col'>Email</th>
-                                <th scope='col'>Remove</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {people.map((people) => {
+                            {state.people.map((person, index) => {
                                 return (
-                                    <tr key={people.id}>
-                                        <th scope='row'>{people.id}</th>
-                                        <td>{people.first_name}</td>
-                                        <td>{people.last_name}</td>
-                                        <td>{people.email}</td>
-                                        <td>
-                                            <button className='bg-danger text-light pt-1 pr-2 pl-2 border-none'>
-                                                Remove
-                                            </button>
-                                        </td>
+                                    <tr key={person.id}>
+                                        <th scope='row'>{person.id}</th>
+                                        <td>{person.first_name}</td>
+                                        <td>{person.last_name}</td>
+                                        <td>{person.email}</td>
                                     </tr>
                                 );
                             })}

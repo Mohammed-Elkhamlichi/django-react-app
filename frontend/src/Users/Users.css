@@ -1,0 +1,22 @@
+.users_alert {
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+.users_alert .close__alert {
+    background: white;
+    border-radius: 100%;
+    color: black;
+    font-weight: bold;
+}
+.alert_success {
+    background: rgb(42, 158, 42);
+}
+.alert_error {
+    background: rgb(181, 22, 83);
+}
