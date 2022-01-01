@@ -14,7 +14,6 @@ export const reducer = (state, action) => {
             );
 
             if (filterUsers.length > 0) {
-                console.log("user aleardy exist");
                 return {
                     ...state,
                     alert: {
@@ -25,7 +24,6 @@ export const reducer = (state, action) => {
                     },
                 };
             } else {
-                console.log("user not exist");
                 return {
                     ...state,
                     users: [...state.users, action.user],

@@ -2,13 +2,16 @@ import React, { useRef, useReducer } from "react";
 import "./UserForm";
 import UsersList from "./UsersList";
 import UserForm from "./UserForm";
-import { initialState, reducer } from "./reducer";
+import { useNavigate } from "react-router-dom";
+import { useUsersContext } from "./UsersProvider";
 import "./index.css";
 import "./Users.css";
 
 const Index = () => {
-    // use Reducer
-    const [state, dispatch] = useReducer(reducer, initialState);
+    // use Navigation to redirect to an other page
+    const navigate = useNavigate();
+    // use Reducer and Context togather
+    const [state, dispatch] = useUsersContext();
 
     const userName = useRef(null);
     const email = useRef(null);
@@ -26,6 +29,7 @@ const Index = () => {
             dispatch({ type: "ADD_USER_SUCCESS", user });
             userName.current.value = "";
             email.current.value = "";
+            navigate("/", { replace: true });
         } else {
             dispatch({ type: "ADD_USER_ERROR" });
         }
